@@ -1,22 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
 <body>
-  <div class="logo">
-    <img src="../../assets/td_logo.png" alt="Image not found!">
-  </div>
-  <div class="login">
-    <form>
-
-    </form>
-
-  </div>
+  <main>
+    <div class="logo">
+      <img class="tdlogo" src="../../assets/td_logo.png" alt="Image not found!">
+    </div>
+    <div class="login">
+      <form id="loginput" name="iform" method="post">
+        <input type="text" id="input" name="input" class="input" placeholder="Email address" autofocus>
+      </form>
+      <form id="loginput" name="iform" method="post">
+        <input type="text" id="input" name="input" class="input" placeholder="Password" autofocus>
+      </form>
+      <button type="button">Log in as user</button>
+      <button><a href="../etusivu/etusivu.component.html" target='_self'>Guest mode</a></button>
+      <div class=link>
+        <a class="smalltext" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Forgot password?</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p class="footertext">&#169; Dragon Riders 2024</p>
+  </footer>
 </body>
-
-</html>
