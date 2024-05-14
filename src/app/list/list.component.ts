@@ -5,4 +5,12 @@ import { Kartta } from '../kartta';
   selector: 'app-list',
   templateUrl: './list.component.html',
 })
-export class ListComponent {}
+export class ListComponent {
+  karttas: Array<Kartta> = []; // opiskelijat tulevat tähän taulukkoon
+
+  /* konstruktorissa injektoidaan (DI) KarttaService
+tähän komponenttiin.*/
+  constructor(private KarttaService: KarttaService) {
+    this.KarttaService.getKarttas().subscribe((data) => (this.karttas = data));
+  }
+}
