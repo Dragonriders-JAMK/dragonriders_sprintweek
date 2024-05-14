@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { KarttaService } from '../kartta.service';
+import { Kartta } from '../kartta';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrl: './list.component.css',
 })
-export class ListComponent {
-  karttas: any;
-}
+export class ListComponent {}
