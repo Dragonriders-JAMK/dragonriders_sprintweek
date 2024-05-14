@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { EtusivuComponent } from './etusivu/etusivu.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     EtusivuComponent,
-    NavbarComponent
+    NavbarComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
