@@ -1,1 +1,23 @@
-<p>list works!</p>
+<div class="container-fluid">
+  <div class="d-flex mt-3 mb-3">Paikat</div>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Koordinaatit</th>
+          <th>Nimi</th>
+          <th>info</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--*ngFor on looppidirektiivi-->
+        <tr *ngFor="let s of karttas">
+          <td>{{s.coordinate}}</td>
+          <td>{{s.name}}</td>
+          <td>{{s.info}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
