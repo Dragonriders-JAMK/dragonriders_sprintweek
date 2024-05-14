@@ -10,6 +10,9 @@ import { LoginComponent } from './login/login.component';
 import { EtusivuComponent } from './etusivu/etusivu.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MapComponent } from './map/map.component';
+import { AdminComponent } from './admin/admin.component';
+import { ListComponent } from './list/list.component';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { MapComponent } from './map/map.component';
     EtusivuComponent,
     NavbarComponent,
     MapComponent,
+    AdminComponent,
+    ListComponent,
+    WeatherComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideClientHydration()],

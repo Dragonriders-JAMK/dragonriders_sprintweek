@@ -4,6 +4,7 @@ import { EtusivuComponent } from './etusivu/etusivu.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
+import { WeatherComponent } from './weather/weather.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'navbar', component: NavbarComponent },
   { path: 'login', component: LoginComponent },
   { path: 'map', component: MapComponent },
+  { path: 'weather', component: WeatherComponent },
 ];
 
 @NgModule({
