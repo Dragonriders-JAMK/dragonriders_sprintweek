@@ -9,3 +9,76 @@ body {
   background-color: #99caff;
   font-family: "Montserrat";
 }
+
+div.head {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  padding-top: 8%;
+  grid-template-areas:
+    "logo teksti teksti ."
+    "logo . . .";
+}
+
+p.gm {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+h2.teksti {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font-size: 1.25em;
+  text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.tdlogo {
+  max-width: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05), 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 7%;
+}
+
+.nappula {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  opacity: 0.74;
+}
+
+img.napukka {
+  width: 90%;
+  margin: 3.5% 0% 0% 0%;
+  border-radius: 10%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25), 5px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.nappula:hover {
+  opacity: 1;
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.teksti {
+  grid-area: teksti;
+}
+
+.header {
+  grid-area: header;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+p.footertext {
+  text-align: center;
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.4);
+}
