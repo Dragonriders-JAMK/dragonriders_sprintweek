@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #99caff;
+  background-image: linear-gradient(to bottom right, #99caff, #00219a);
   font-family: "Montserrat";
 }
 
@@ -33,6 +33,7 @@ h2.teksti {
   font-size: 1.25em;
   text-shadow: rgb(0, 0, 0) 1px 1px 1px;
   color: rgba(0, 0, 0, 0.7);
+  opacity: 0.9;
 }
 
 .tdlogo {
@@ -55,9 +56,6 @@ img.napukka {
   border-radius: 10%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25), 5px 4px 10px rgba(0, 0, 0, 0.1);
 }
-.nappula:hover {
-  opacity: 1;
-}
 
 .logo {
   grid-area: logo;
@@ -72,7 +70,7 @@ img.napukka {
 }
 
 footer {
-  position: fixed;
+  position: center;
   bottom: 0;
   width: 100%;
   height: 50px;
