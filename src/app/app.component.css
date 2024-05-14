@@ -1,0 +1,81 @@
+.montserrat-body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: thin;
+}
+
+body {
+  background-color: #99caff;
+  font-family: "Montserrat";
+}
+
+input {
+  font-family: "Montserrat";
+  font-size: 0.9em;
+  text-align: center;
+  padding: 4% 0% 4% 0%;
+  margin: 5% 0% 5% 0%;
+  background-color: rgba(12, 20, 60, 0.1);
+  border-radius: 25px;
+  border: 0px solid black;
+}
+
+div.logo {
+  padding-top: 17%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0% 8% 0% 8%;
+}
+
+div.link {
+  margin-top: 3%;
+}
+
+img.tdlogo {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+
+div.login {
+  margin-top: 18%;
+  border-radius: 25px;
+  background-color: rgba(34, 43, 97, 0.2);
+  padding: 5%;
+}
+a.smalltext {
+  font-size: 0.745em;
+  color: rgba(0, 0, 0, 0.4);
+  text-decoration: underline;
+}
+button {
+  font-family: "Montserrat";
+  font-size: 0.9em;
+  text-align: center;
+  padding: 4% 20% 4% 20%;
+  margin: 1% 0% 1% 0%;
+  background-color: rgba(12, 20, 60, 0.1);
+  border-radius: 25px;
+  border: 0px solid black;
+  text-decoration: underline;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+p.footertext {
+  text-align: center;
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.4);
+}
