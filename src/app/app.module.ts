@@ -13,6 +13,8 @@ import { MapComponent } from './map/map.component';
 import { AdminComponent } from './admin/admin.component';
 import { ListComponent } from './list/list.component';
 import { WeatherComponent } from './weather/weather.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,7 @@ import { WeatherComponent } from './weather/weather.component';
     ListComponent,
     WeatherComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
