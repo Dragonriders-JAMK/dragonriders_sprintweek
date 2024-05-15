@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import {
-  HttpClient,
-  HttpHeaderResponse,
-  HttpHeaders,
-} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -21,7 +17,8 @@ export class WeatherAPIService {
       .set('X-RapidAPI-key', this.apiKey)
       .set('X-RapidAPI-Host', 'the-weather-api.p.rapidapi.com');
 
-    const option = { headers };
-    return this.http.get(`${this.apiUrl}/${city}`, option);
+    const options = { headers };
+    const url = `${this.apiUrl}${city}`; // Corrected URL construction
+    return this.http.get(url, options);
   }
 }
