@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { WeatherDataService } from '../weatherData.service';
 import { Weather } from '../weather/weather.component';
-import { environment } from '../../environments/environment';
+
 @Component({
   selector: 'app-cityselect',
   templateUrl: './cityselect.component.html',
@@ -15,6 +15,15 @@ export class CityselectComponent {
   constructor(private weatherData: WeatherDataService) {}
 
   submit() {
-    throw new Error('Method not implemented.');
+    this.weatherData.load(this.city).subscribe((data: Weather) => {
+      this.weather.city = data.name;
+      this.weather.conditions = data.weather.main;
+      this.weather.temperature = Math.round(
+        (data.main.temp - 273.15) * 1.8 + 32
+      );
+      this.weather.icon = this.weatherData.getIconUrl(data.weather.icon);
+
+      this.onSelection.emit(this.weather);
+    });
   }
 }

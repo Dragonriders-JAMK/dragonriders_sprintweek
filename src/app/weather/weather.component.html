@@ -5,4 +5,4 @@
   Temperature: {{weather.temperature}} °F<br />
 </p>
 
-<app-cityselect></app-cityselect>
+<app-cityselect (onSelection)="weather.update($event)"></app-cityselect>

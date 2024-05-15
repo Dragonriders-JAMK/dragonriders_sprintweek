@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 //import { WeatherService } from '../weather.service';
 import { environment } from '../../environments/environment';
 export class Weather {
+  update($event: Weather) {
+    throw new Error('Method not implemented.');
+  }
   city: string = '';
   conditions: string = '';
   temperature: number = 0;
@@ -19,5 +22,8 @@ export class WeatherComponent {
     conditions: 'Sunny',
     temperature: 20,
     icon: '',
+    update: function ($event: Weather): void {
+      throw new Error('Function not implemented.');
+    },
   };
 }

@@ -9,3 +9,10 @@ import { EtusivuComponent } from './etusivu/etusivu.component';
 export class AppComponent {
   title = 'travel_delight';
 }
+
+export class Weather {
+  city = String;
+  conditions = String;
+  temperature = Number;
+  icon = String;
+}
