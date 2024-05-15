@@ -1,0 +1,22 @@
+.map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 30px;
+}
+
+#map {
+  height: 100%;
+}
+
+.search-bar {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  z-index: 1000; /* Ensure the search bar appears on top of the map */
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
