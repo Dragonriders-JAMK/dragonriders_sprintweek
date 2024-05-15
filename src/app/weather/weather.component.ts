@@ -8,24 +8,13 @@ import { WeatherAPIService } from '../weather-api.service';
   styleUrls: ['./weather.component.css'],
 })
 export class WeatherComponent {
-  searchForm!: FormGroup;
-  weather: any;
-
-  constructor(private fb: FormBuilder, private service: WeatherAPIService) {}
-
-  ngOnInit() {
-    this.searchForm = this.fb.group({
-      city: [null, Validators.required],
-    });
-  }
-
-  searchWeather() {
-    console.log('HALOO');
-    console.log(this.searchForm.value);
-    this.service
-      .searchWeather(this.searchForm.get(['city'])!.value)
-      .subscribe((resp) => {
-        console.log(resp);
-      });
-  }
+  weather: Weather = {
+    city: 'Jyväskylä',
+    conditions: 'Sunny',
+    temperature: 20,
+    icon: '',
+    update: function ($event: Weather): void {
+      throw new Error('Function not implemented.');
+    },
+  };
 }

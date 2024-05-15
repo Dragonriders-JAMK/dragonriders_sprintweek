@@ -15,6 +15,7 @@ import { ListComponent } from './list/list.component';
 import { WeatherComponent } from './weather/weather.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,13 @@ import { HttpClientModule } from '@angular/common/http';
     ListComponent,
     WeatherComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })

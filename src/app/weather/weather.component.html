@@ -1,6 +1,30 @@
-<h2>{{weather.city}}</h2>
-<img [src]="weather.icon" style="float: left;" />
-<p>
-  Conditions: {{weather.conditions}}<br />
-  Temperature: {{weather.temperature}} °F<br />
-</p>
+<div class="content" [formGroup]="searchForm">
+
+  <input type="text" class="search-input" placeholder="Enter City" formControlName="city">
+  <button class="search-button" (click)="searchWeather">Search</button>
+</div>
+
+<div class="content" *ngIf="weather">
+  <div class="row">
+    <div class="image-container">
+
+      <div class="temperature">
+        <p> Temperature: {{weather.temp}}</p>
+      </div>
+      <div class="row">
+        <div class="section-2">
+          <div class="top-info">
+            <p> Expected temp: {{weather.expected_temp}}</p>
+          </div>
+        </div>
+        <div class="bottom-info">
+          <div class="info-box">
+            <p> HUMIDITY: {{weather.humidity}} </p>
+          </div>
+          <div class="info-box">
+            <p> WINDSPEED: {{weather.wind}} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
