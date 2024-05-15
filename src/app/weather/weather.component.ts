@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 //import { WeatherService } from '../weather.service';
-
+import { environment } from '../../environments/environment';
 export class Weather {
   city: string = '';
   conditions: string = '';
