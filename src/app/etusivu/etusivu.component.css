@@ -6,7 +6,6 @@
 }
 
 body {
-  background-image: linear-gradient(to bottom right, #99caff, #00219a);
   font-family: "Montserrat";
 }
 
@@ -54,10 +53,38 @@ img.napukka {
   width: 90%;
   margin: 3.5% 0% 0% 0%;
   border-radius: 10%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25), 5px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25), 5px 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInSlide 0.8s;
+  border-top: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+img.napukka1 {
+  width: 90%;
+  margin: 3.5% 0% 0% 0%;
+  border-radius: 10%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25), 5px 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInDelay1s 1.6s;
+  border-top: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+img.napukka2 {
+  width: 90%;
+  margin: 3.5% 0% 0% 0%;
+  border-radius: 10%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25), 5px 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInDelay2s 2.4s;
+  border-top: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 
 .logo {
+  margin-left: 20%;
   grid-area: logo;
 }
 
@@ -69,12 +96,6 @@ img.napukka {
   grid-area: header;
 }
 
-footer {
-  position: center;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-}
 p.footertext {
   text-align: center;
   font-size: 0.9em;
