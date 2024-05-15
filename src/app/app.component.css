@@ -67,15 +67,3 @@ button {
   border: 0px solid black;
   text-decoration: underline;
 }
-footer {
-  position: center;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-}
-p.footertext {
-  padding-top: 5%;
-  text-align: center;
-  font-size: 0.9em;
-  color: rgb(0, 0, 0, 0.5);
-}
