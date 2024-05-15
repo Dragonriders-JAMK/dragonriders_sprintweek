@@ -1,29 +1,31 @@
 import { Component } from '@angular/core';
-//import { WeatherService } from '../weather.service';
-import { environment } from '../../environments/environment';
-export class Weather {
-  update($event: Weather) {
-    throw new Error('Method not implemented.');
-  }
-  city: string = '';
-  conditions: string = '';
-  temperature: number = 0;
-  icon: string = '';
-}
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { WeatherAPIService } from '../weather-api.service';
 
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
-  styleUrl: './weather.component.css',
+  styleUrls: ['./weather.component.css'],
 })
 export class WeatherComponent {
-  weather: Weather = {
-    city: 'Jyväskylä',
-    conditions: 'Sunny',
-    temperature: 20,
-    icon: '',
-    update: function ($event: Weather): void {
-      throw new Error('Function not implemented.');
-    },
-  };
+  searchForm!: FormGroup;
+  weather: any;
+
+  constructor(private fb: FormBuilder, private service: WeatherAPIService) {}
+
+  ngOnInit() {
+    this.searchForm = this.fb.group({
+      city: [null, Validators.required],
+    });
+  }
+
+  searchWeather() {
+    console.log('HALOO');
+    console.log(this.searchForm.value);
+    this.service
+      .searchWeather(this.searchForm.get(['city'])!.value)
+      .subscribe((resp) => {
+        console.log(resp);
+      });
+  }
 }
