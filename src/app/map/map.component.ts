@@ -39,6 +39,7 @@ export class MapComponent implements AfterViewInit {
       attribution:
         '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>',
     }).addTo(this.map);
+
     /*navigator.geolocation.getCurrentPosition((location) => {
       const latlng = new L.LatLng(
         location.coords.latitude,
