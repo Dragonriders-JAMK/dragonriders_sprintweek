@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { WeatherAPIService } from '../weather-api.service';
-
-interface Weather {
-  city: string;
-  conditions: string;
-  temperature: number;
-  icon: string;
-  expected_temp: number;
-  humidity: number;
-  wind: number;
-}
+import { Weather } from '../weather';
 
 @Component({
   selector: 'app-weather',
@@ -37,19 +28,24 @@ export class WeatherComponent implements OnInit {
     if (this.searchForm.valid) {
       const city = this.searchForm.get('city')?.value;
       this.weatherService.searchWeather(city).subscribe(
-        (data) => {
+        (response) => {
+          console.log('API Response:', response); // Log the response to inspect it
+          const data = response.data; // Access the data property
           this.weather = {
             city: data.city,
-            conditions: data.conditions,
-            temperature: data.temperature,
-            icon: data.icon,
+            conditions: data.current_weather,
+            temperature: parseInt(data.temp, 10),
             expected_temp: data.expected_temp,
-            humidity: data.humidity,
             wind: data.wind,
+            humidity: data.humidity,
+            icon: data.bg_image, // Assuming you want to use the bg_image as the icon
           };
+          this.errorMessage = null;
         },
         (error) => {
           console.error('Error fetching weather data', error);
+          this.errorMessage =
+            'Could not fetch weather data. Please try again later.';
         }
       );
     }
