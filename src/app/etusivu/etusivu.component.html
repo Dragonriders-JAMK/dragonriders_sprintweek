@@ -1,26 +1,23 @@
-<body>
-  <main>
-    <div class="head">
-      <div class="logo">
-        <img class="tdlogo" src="../../assets/td_logo.png" alt="Image not found!">
-      </div>
-      <div class="teksti">
-        <p class="gm">Guest mode</p>
-        <h2 class="teksti">
-          Travel Delight
-        </h2>
-      </div>
-
+<main>
+  <div class="head">
+    <div class="logo">
+      <img class="tdlogo" src="../../assets/td_logo.png" alt="Image not found!">
     </div>
-    <div class="nappula">
-      <img class="napukka" src="../../assets/csbutton.png" alt="Image not found">
-    </div>
-    <div class="nappula">
-      <img class="napukka" src="../../assets/wbutton.png" alt="Image not found">
-    </div>
-    <div class="nappula">
-      <img class="napukka" src="../../assets/sbutton.png" alt="Image not found">
+    <div class="teksti">
+      <p class="gm">Guest mode</p>
+      <h2 class="teksti">
+        Travel Delight
+      </h2>
     </div>
 
-  </main>
-</body>
+  </div>
+  <div class="nappula">
+    <img class="napukka" src="../../assets/csbutton.png" alt="Image not found" (click)="navigateToMap()">
+  </div>
+  <div class="nappula">
+    <img class="napukka" src="../../assets/wbutton.png" alt="Image not found" (click)="navigateToWeather()">
+  </div>
+  <div class="nappula">
+    <img class="napukka" src="../../assets/sbutton.png" alt="Image not found">
+  </div>
+</main>

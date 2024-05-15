@@ -6,7 +6,6 @@
 }
 
 body {
-  background-image: linear-gradient(to bottom right, #99caff, #00219a);
   font-family: "Montserrat";
 }
 
@@ -58,6 +57,7 @@ img.napukka {
 }
 
 .logo {
+  margin-left: 20%;
   grid-area: logo;
 }
 
