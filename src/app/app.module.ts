@@ -15,7 +15,6 @@ import { ListComponent } from './list/list.component';
 import { WeatherComponent } from './weather/weather.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CityselectComponent } from './cityselect/cityselect.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { CityselectComponent } from './cityselect/cityselect.component';
     AdminComponent,
     ListComponent,
     WeatherComponent,
-    CityselectComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [provideClientHydration()],
