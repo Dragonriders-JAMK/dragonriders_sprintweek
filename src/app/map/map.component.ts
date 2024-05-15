@@ -79,7 +79,11 @@ tähän komponenttiin.*/
 
         // Lisää merkki ja popup valittuun kohteeseen
         const marker = L.marker([lat, lng]).addTo(this.map);
-        marker.bindPopup(`<b>${kartta.name}</b><br>${kartta.info}`).openPopup();
+        marker
+          .bindPopup(`<b>${kartta.name}</b><br>${kartta.info}`, {
+            autoClose: true,
+          })
+          .openPopup();
       } else {
         console.error('Invalid coordinates format');
       }
