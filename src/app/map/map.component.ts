@@ -37,7 +37,7 @@ tähän komponenttiin.*/
 
   initMap(): void {
     this.map = L.map('map', {
-      center: [62.2333, 25.7333], // Oletuskoordinaatit (Tampere)
+      center: [62.2333, 25.7333],
       zoom: 13,
     });
 
