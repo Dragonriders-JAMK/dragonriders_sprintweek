@@ -70,6 +70,14 @@ tähän komponenttiin.*/
   }
   centerMap(kartta: Kartta, event: Event): void {
     event.preventDefault(); // Estää linkin oletusarvoisen toiminnan
+    //vain yksi marker kerrallaan
+    if (this.map) {
+      this.map.eachLayer((layer) => {
+        if (layer instanceof L.Marker) {
+          this.map.removeLayer(layer);
+        }
+      });
+    }
     if (kartta.coordinate) {
       const coordinates = kartta.coordinate.split(',').map(parseFloat);
       if (coordinates.length >= 2) {
