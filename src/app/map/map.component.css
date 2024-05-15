@@ -1,22 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Vie koko näytön korkeus */
+}
+
 .map-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 30px;
+  flex: 1; /* Venyttää karttaa täyttämään käytettävissä oleva tila */
+  position: relative; /* Voit sijoittaa muita elementtejä suhteessa tähän */
 }
 
 #map {
-  height: 100%;
+  height: 100%; /* Vie koko käytettävissä oleva tila */
 }
 
-.search-bar {
-  position: absolute;
-  top: 10px;
-  left: 50px;
-  z-index: 1000; /* Ensure the search bar appears on top of the map */
-  background: #fff;
-  padding: 10px;
-  border-radius: 5px;
+.table-container {
+  flex: 1; /* Venyttää taulukkoa täyttämään käytettävissä oleva tila */
+  overflow-y: auto; /* Lisää vierityspalkki tarvittaessa */
 }
