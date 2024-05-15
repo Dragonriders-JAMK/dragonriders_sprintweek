@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
-import { Weather } from '../weather';
 //import { WeatherService } from '../weather.service';
+
+export class Weather {
+  city: string = '';
+  conditions: string = '';
+  temperature: number = 0;
+  icon: string = '';
+}
 
 @Component({
   selector: 'app-weather',

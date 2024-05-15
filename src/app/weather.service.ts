@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Weather } from './weather';
 
-let serviceUrl: String = 'https://api.openweathermap.org/data/2.5/weather';
-let apiKey: String = ''; // insert your API key here
+import { environment } from '../environments/environment';
+
+// To access API URL
+const apiUrl = environment.API_URL;
+
+// To access API Key
+const apiKey = environment.API_KEY;
 
 @Injectable({
   providedIn: 'root',
 })
 export class WeatherDataService {
-  constructor(private http: HttpClient) {}
-
-  load(city: String) {
-    return this.http.get(serviceUrl + '?q=' + city + '&APPID=' + apiKey);
-  }
-
-  getIconUrl(icon: String) {
-    return 'http://openweathermap.org/img/w/' + icon + '.png';
+  apiKey: string;
+  apiUrl: string;
+  constructor(private http: HttpClient) {
+    // Initialize serviceUrl and apiKey here
+    this.apiUrl = environment.API_URL;
+    this.apiKey = environment.API_KEY;
   }
 }
