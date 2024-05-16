@@ -10,6 +10,9 @@ import { environment } from '../environments/environment';
   providedIn: 'root',
 })
 export class WeatherService {
+  searchWeatherByCoordinates(latitude: number, longitude: number) {
+    throw new Error('Method not implemented.');
+  }
   constructor(private httpClient: HttpClient) {}
 
   searchWeather(city: string): Observable<WeatherModel> {
