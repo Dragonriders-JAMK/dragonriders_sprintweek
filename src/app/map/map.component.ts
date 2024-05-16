@@ -70,6 +70,14 @@ tähän komponenttiin.*/
   }
   centerMap(kartta: Kartta, event: Event): void {
     event.preventDefault(); // Estää linkin oletusarvoisen toiminnan
+    //vain yksi marker kerrallaan
+    if (this.map) {
+      this.map.eachLayer((layer) => {
+        if (layer instanceof L.Marker) {
+          this.map.removeLayer(layer);
+        }
+      });
+    }
     if (kartta.coordinate) {
       const coordinates = kartta.coordinate.split(',').map(parseFloat);
       if (coordinates.length >= 2) {
@@ -79,7 +87,11 @@ tähän komponenttiin.*/
 
         // Lisää merkki ja popup valittuun kohteeseen
         const marker = L.marker([lat, lng]).addTo(this.map);
-        marker.bindPopup(`<b>${kartta.name}</b><br>${kartta.info}`).openPopup();
+        marker
+          .bindPopup(`<b>${kartta.name}</b><br>${kartta.info}`, {
+            autoClose: true,
+          })
+          .openPopup();
       } else {
         console.error('Invalid coordinates format');
       }
