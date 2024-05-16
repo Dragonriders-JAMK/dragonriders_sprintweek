@@ -64,10 +64,10 @@ export class AdminComponent implements OnInit {
   // lomakkeen update -metodi joka asettaa
   // lomekkeelle arvot joita voidaan muokata
   update(s: Kartta) {
+    this.id = s._id; // _id pitää kuljettaa mukana vaikka sitä ei muokata
     this.koordinaatit = s.coordinate;
     this.nimi = s.name;
     this.info = s.info;
-    this.id = s._id; // _id pitää kuljettaa mukana vaikka sitä ei muokata
 
     this.addnew = false;
     this.saveedited = true;
