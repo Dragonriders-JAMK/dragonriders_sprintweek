@@ -33,45 +33,7 @@ export class WeatherComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.getCurrentLocationWeather();
-  }
-
-  getCurrentLocationWeather(): void {
-    this.geolocation.subscribe({
-      next: (position) => {
-        const { latitude, longitude } = position.coords;
-        this.weatherService
-          .searchWeatherByCoordinates(latitude, longitude)
-          .subscribe(
-            (response) => {
-              console.log('API Response:', response);
-              const data = response.data;
-              this.weather = {
-                city: data.city,
-                conditions: data.current_weather,
-                temperature: parseInt(data.temp, 10),
-                expected_temp: data.expected_temp,
-                wind: data.wind,
-                humidity: data.humidity,
-                icon: data.bg_image,
-              };
-              this.errorMessage = null;
-            },
-            (error) => {
-              console.error('Error fetching weather data', error);
-              this.errorMessage =
-                'Could not fetch weather data for your location. Please try again later.';
-            }
-          );
-      },
-      error: (error) => {
-        console.error('Geolocation error:', error);
-        this.errorMessage =
-          'Could not determine your location. Please enter a city.';
-      },
-    });
-  }
+  ngOnInit(): void {}
 
   searchWeather(): void {
     if (this.searchForm.valid) {
