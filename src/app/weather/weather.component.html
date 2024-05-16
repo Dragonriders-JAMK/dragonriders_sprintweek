@@ -1,34 +1,30 @@
 <div class="content" [formGroup]="searchForm">
   <input type="text" class="search-input" placeholder="Enter City" formControlName="city">
-  <button class="search-button" (click)="searchWeather()">Search</button>
+  <button class="search-button" (click)="loadData(searchForm.value.city)">Search</button>
 </div>
 
-<div class="content" *ngIf="weather">
+<div class="content" *ngIf="data">
   <div class="row">
     <div class="image-container">
-      <img class="imits" [src]="weather.icon" alt="Weather Icon">
+      <img class="imits" [src]="data.imageUrl" alt="Weather Icon">
       <div class="temperature">
-        <p>Temperature: {{weather.temperature}}°C</p>
+        <p>Temperature: {{data.temp}}°C</p>
       </div>
       <div class="row">
         <div class="section-2">
           <div class="top-info">
-            <p>Expected temperature: {{weather.expected_temp}}</p>
+            <p>Expected temperature: {{data.feelslike}}°C</p>
           </div>
         </div>
         <div class="bottom-info">
           <div class="info-box">
-            <p>humidity: {{weather.humidity}}</p>
+            <p>humidity: {{data.humidity}}</p>
           </div>
           <div class="info-box">
-            <p>Windspeed: {{weather.wind}}</p>
+            <p>Pressure: {{data.pressure}}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<div *ngIf="errorMessage" class="error-message">
-  <p>{{ errorMessage }}</p>
 </div>
