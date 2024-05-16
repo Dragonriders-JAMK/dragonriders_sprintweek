@@ -1,7 +1,6 @@
 <div class="content" [formGroup]="searchForm">
   <input type="text" class="search-input" placeholder="Enter City" formControlName="city">
-  <button class="search-button" (click)="searchWeather()"><img class="mGlass" src="../../assets/sIcon.png" alt=":D">
-    Search</button>
+  <button class="search-button" (click)="searchWeather()">Search</button>
 </div>
 
 <div class="content" *ngIf="weather">

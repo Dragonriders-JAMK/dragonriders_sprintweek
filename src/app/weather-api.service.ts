@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class WeatherAPIService {
-  private apiKey = 'a200848fd6mshd859f37c1eaba64p1d8c3bjsnfa822ce85126';
+  private apiKey = 'ab478b17efmsh735bfb49624236fp1f6dbejsnc5003b4132b8';
   private apiUrl = 'https://the-weather-api.p.rapidapi.com/api/weather';
 
   constructor(private http: HttpClient) {}
