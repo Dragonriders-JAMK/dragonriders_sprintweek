@@ -17,7 +17,7 @@ input.searchInput {
   font-family: "Montserrat";
   font-size: 0.9em;
   margin: 0% 3% 0% 0%;
-  background-color: rgba(12, 20, 60, 0.1);
+  background-color: rgba(12, 20, 60, 0.2);
   border-radius: 10px;
   border: 0px solid black;
   width: 76%;
@@ -36,6 +36,8 @@ button.searchButton {
 
 .search-bar {
   position: absolute;
+  width: 70%;
+  max-width: 350px;
   top: 10px;
   left: 50px;
   z-index: 1000; /* Ensure the search bar appears on top of the map */
