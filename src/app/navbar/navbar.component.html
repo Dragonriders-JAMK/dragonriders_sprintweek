@@ -1,4 +1,9 @@
 <a routerLink="/etusivu">Etusivu</a> |
-<a routerLink="/login">Login</a> |
-<a routerLink="/map">Kartta</a> |
-<a routerLink="/admin">Admin</a> |
+
+<span *ngIf="AuthenticationService.loggedIn === false"
+  ><a routerLink="/login">login</a></span
+>
+<span *ngIf="this.AuthenticationService.loggedIn === true">
+  <!--event binding- kun klikataan, logout metodi aktivoituu-->
+  <a routerLink="loginform" (click)="logOut()"> logout</a></span
+>| <a routerLink="/map">Kartta</a> | <a routerLink="/admin">Admin</a> |

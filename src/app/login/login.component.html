@@ -1,18 +1,130 @@
 <main>
   <div class="logo">
-    <img class="tdlogo" src="../../assets/td_logo.png" alt="Image not found!">
+    <img class="tdlogo" src="../../assets/td_logo.png" alt="Image not found!" />
   </div>
   <div class="login">
-    <form id="loginput" name="iform" method="post">
-      <input type="text" id="input" name="input" class="input" placeholder="Email address" autofocus>
+    <!--<ng-container *ngIf="isLoggedIn; else loginForm">
+      <button class="logout-button" (click)="logout()">Kirjaudu ulos</button>
+    </ng-container>-->
+
+    <form *ngIf="!isLoggedIn" (ngSubmit)="login()" name="iform" method="post">
+      <form id="loginput" name="iform" method="post">
+        <input
+          type="text"
+          id="username"
+          name="username"
+          [(ngModel)]="username"
+          required
+          autofocus
+          class="input"
+          placeholder="Email address"
+        />
+      </form>
+      <form id="loginput" name="iform" method="post">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+          autofocus
+        />
+      </form>
+      <button type="submit">Log in as user</button>
     </form>
-    <form id="loginput" name="iform" method="post">
-      <input type="text" id="input" name="input" class="input" placeholder="Password" autofocus>
-    </form>
-    <button type="button">Log in as user</button>
-    <button><a routerLink="/etusivu" target='_self'>Guest mode</a></button>
-    <div class=link>
-      <a class="smalltext" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Forgot password?</a>
+    <button><a routerLink="/etusivu" target="_self">Guest mode</a></button>
+    <div class="link">
+      <a class="smalltext" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        >Forgot password?</a
+      >
     </div>
   </div>
+  <!--<div class="login">
+    <ng-container *ngIf="isLoggedIn; else loginForm">
+      <button class="logout-button" (click)="logout()">Kirjaudu ulos</button>
+    </ng-container>
+
+    <ng-template #loginForm>
+      <div class="login-form">
+        <form
+          *ngIf="!isLoggedIn"
+          (ngSubmit)="login()"
+          name="iform"
+          method="post"
+          class="input"
+          placeholder="Password"
+          autofocus
+        >
+          <input
+            type="text"
+            id="username"
+            name="username"
+            [(ngModel)]="username"
+            required
+            autofocus
+            class="input"
+            placeholder="Email address"
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            required
+            autofocus
+          />
+
+          <button type="submit">Log in as user</button>
+          <button>
+            <a routerLink="/etusivu" target="_self">Guest mode</a>
+          </button>
+          <div class="link">
+            <a
+              class="smalltext"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              >Forgot password?</a
+            >
+          </div>
+        </form>
+      </div>
+    </ng-template>
+  </div>
+</main>
+<main>
+  <div class="logo">
+    <img class="tdlogo" src="../../assets/td_logo.png" alt="Image not found!" />
+  </div>
+  <div class="login-form">
+    <div class="login">
+      <form id="loginput" name="iform" method="post">
+        <input
+          *ngIf="!isLoggedIn"
+          (ngSubmit)="login()"
+          type="text"
+          id="input"
+          name="input"
+          class="input"
+          placeholder="Email address"
+          autofocus
+        />
+
+        <input
+          type="text"
+          id="input"
+          name="input"
+          class="input"
+          placeholder="Password"
+          autofocus
+        />
+        <button type="button">Log in as user</button>
+      </form>
+      <button><a routerLink="/etusivu" target="_self">Guest mode</a></button>
+      <div class="link">
+        <a class="smalltext" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          >Forgot password?</a
+        >
+      </div>
+    </div>
+  </div>
+</main>-->
 </main>

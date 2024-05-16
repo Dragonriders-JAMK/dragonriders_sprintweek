@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { WeatherComponent } from './weather/weather.component';
 import { AdminComponent } from './admin/admin.component';
+import { loginGuard } from './login.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'map', component: MapComponent },
   { path: 'weather', component: WeatherComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [loginGuard] },
 ];
 
 @NgModule({
