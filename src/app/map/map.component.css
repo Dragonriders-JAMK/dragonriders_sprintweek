@@ -43,3 +43,8 @@ button.searchButton {
   padding: 10px;
   border-radius: 5px;
 }
+
+.table-container {
+  flex: 1; /* Venyttää taulukkoa täyttämään käytettävissä oleva tila */
+  overflow-y: auto; /* Lisää vierityspalkki tarvittaessa */
+}
