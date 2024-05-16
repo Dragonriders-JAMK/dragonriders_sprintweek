@@ -1,20 +1,18 @@
-<body>
-  <main>
-    <div class="logo">
-      <img class="tdlogo" src="../../assets/td_logo.png" alt="Image not found!">
+<main>
+  <div class="logo">
+    <img class="tdlogo" src="../../assets/td_logo.png" alt="Image not found!">
+  </div>
+  <div class="login">
+    <form id="loginput" name="iform" method="post">
+      <input type="text" id="input" name="input" class="input" placeholder="Email address" autofocus>
+    </form>
+    <form id="loginput" name="iform" method="post">
+      <input type="text" id="input" name="input" class="input" placeholder="Password" autofocus>
+    </form>
+    <button type="button">Log in as user</button>
+    <button><a routerLink="/etusivu" target='_self'>Guest mode</a></button>
+    <div class=link>
+      <a class="smalltext" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Forgot password?</a>
     </div>
-    <div class="login">
-      <form id="loginput" name="iform" method="post">
-        <input type="text" id="input" name="input" class="input" placeholder="Email address" autofocus>
-      </form>
-      <form id="loginput" name="iform" method="post">
-        <input type="text" id="input" name="input" class="input" placeholder="Password" autofocus>
-      </form>
-      <button type="button">Log in as user</button>
-      <button><a routerLink="/etusivu" target='_self'>Guest mode</a></button>
-      <div class=link>
-        <a class="smalltext" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Forgot password?</a>
-      </div>
-    </div>
-  </main>
-</body>
+  </div>
+</main>
