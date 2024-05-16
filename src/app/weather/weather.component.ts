@@ -1,17 +1,9 @@
+// WeatherComponent
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { WeatherAPIService } from '../weather-api.service';
+import { WeatherService } from '../weather-service.service';
 import { GeolocationService } from '@ng-web-apis/geolocation';
-
-interface Weather {
-  city: string;
-  conditions: string;
-  temperature: number;
-  expected_temp: string;
-  wind: string;
-  humidity: string;
-  icon: string;
-}
+import { WeatherModel } from '../weatherModel';
 
 @Component({
   selector: 'app-weather',
@@ -19,13 +11,13 @@ interface Weather {
   styleUrls: ['./weather.component.css'],
 })
 export class WeatherComponent implements OnInit {
-  searchForm: FormGroup;
-  weather: Weather | null = null;
+  searchForm!: FormGroup;
+  weather: WeatherModel | null = null;
   errorMessage: string | null = null;
 
   constructor(
     private fb: FormBuilder,
-    private weatherService: WeatherAPIService,
+    private weatherService: WeatherService,
     private geolocation: GeolocationService
   ) {
     this.searchForm = this.fb.group({
@@ -46,16 +38,7 @@ export class WeatherComponent implements OnInit {
           .subscribe(
             (response) => {
               console.log('API Response:', response);
-              const data = response.data;
-              this.weather = {
-                city: data.city,
-                conditions: data.current_weather,
-                temperature: parseInt(data.temp, 10),
-                expected_temp: data.expected_temp,
-                wind: data.wind,
-                humidity: data.humidity,
-                icon: data.bg_image,
-              };
+              this.weather = response;
               this.errorMessage = null;
             },
             (error) => {
@@ -79,16 +62,7 @@ export class WeatherComponent implements OnInit {
       this.weatherService.searchWeather(city).subscribe(
         (response) => {
           console.log('API Response:', response);
-          const data = response.data;
-          this.weather = {
-            city: data.city,
-            conditions: data.current_weather,
-            temperature: parseInt(data.temp, 10),
-            expected_temp: data.expected_temp,
-            wind: data.wind,
-            humidity: data.humidity,
-            icon: data.bg_image,
-          };
+          this.weather = response;
           this.errorMessage = null;
         },
         (error) => {

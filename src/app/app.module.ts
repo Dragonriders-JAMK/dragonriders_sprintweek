@@ -14,6 +14,7 @@ import { ListComponent } from './list/list.component';
 import { WeatherComponent } from './weather/weather.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { WeatherModel } from './weatherModel';
 // Remove this line
 // import { GeolocationModule } from '@ng-web-apis/geolocation';
 
@@ -34,8 +35,6 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    // Remove this line
-    // GeolocationModule
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
