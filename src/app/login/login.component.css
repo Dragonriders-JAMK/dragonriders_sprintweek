@@ -5,13 +5,10 @@
   font-style: thin;
 }
 
-body {
-  font-family: "Montserrat";
-}
-
 .tdlogo {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05), 2px 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 7%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25), 5px 4px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid transparent;
 }
 
 input {
@@ -40,6 +37,7 @@ div.login {
   justify-content: center;
   margin: 0% 8% 0% 8%;
   animation: fadeInDelay1s 2s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25), 5px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 div.link {
@@ -71,6 +69,7 @@ button {
   margin: 1% 0% 1% 0%;
   background-color: rgba(12, 20, 60, 0.1);
   border-radius: 25px;
-  border: 0px solid black;
+  border: 2px solid transparent;
   text-decoration: underline;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25), 5px 4px 10px rgba(0, 0, 0, 0.05);
 }

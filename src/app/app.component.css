@@ -20,6 +20,13 @@ input {
   border: 0px solid black;
 }
 
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
 div.logo {
   padding-top: 17%;
   display: flex;
