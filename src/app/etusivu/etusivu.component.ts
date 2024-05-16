@@ -15,4 +15,7 @@ export class EtusivuComponent {
   navigateToWeather() {
     this.router.navigate(['/weather']); // Replace 'your-route' with the actual route path
   }
+  navigateToAdmin() {
+    this.router.navigate(['/admin']); // Replace 'your-route' with the actual route path
+  }
 }

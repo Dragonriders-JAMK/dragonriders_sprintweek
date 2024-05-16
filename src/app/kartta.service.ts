@@ -28,21 +28,7 @@ export class KarttaService {
       .get<Kartta[]>(this.apiUrl)
       .pipe(catchError(this.handleError));
   }
-  // Opiskelijan haku id:n perusteella. Palauttaa observablena opiskelijan.
-  /*
-  getStudent(id: number): Observable<Student> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.get<Student>(url)
-      .pipe(
-        catchError(this.handleError)
-      );
-  }
-  */
 
-  /** POST: lisätään opiskelija palvelimelle.
-   * Studentin tyyppi on any, koska _id puuttuu eikä noudateta student.ts:n mallia.
-   * _id jätetään pois opiskelijaa lisättaessä, koska Mongo lisää sen automaattisesti
-   */
   addKartta(kartta: any): Observable<Kartta> {
     return this.http
       .post<Kartta>(this.apiUrl, kartta, headers)
@@ -56,12 +42,8 @@ export class KarttaService {
       .pipe(catchError(this.handleError));
   }
 
-  /** DELETE: Poistetaan opiskelija id:n perusteella.
-   *  Token laitettu menemään headerin mukana
-   */
   delKartta(id: string): Observable<Kartta> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<Kartta>(url).pipe(catchError(this.handleError));
   }
 }
-
