@@ -7,7 +7,7 @@
       <button class="logout-button" (click)="logout()">Kirjaudu ulos</button>
     </ng-container>-->
 
-    <form *ngIf="!isLoggedIn" (ngSubmit)="login()" name="iform" method="post">
+    <form *ngIf="!loggedIn" (ngSubmit)="login()" name="iform" method="post">
       <form id="loginput" name="iform" method="post">
         <input
           type="text"
@@ -30,7 +30,7 @@
           autofocus
         />
       </form>
-      <button type="submit"><a routerLink="/etusivu">Log in as user</a></button>
+      <button type="submit">Log in as user</button>
     </form>
     <button><a routerLink="/etusivu" target="_self">Guest mode</a></button>
     <div class="link">

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,22 +10,25 @@ import { AuthenticationService } from '../authentication.service';
 export class LoginComponent {
   username: string = '';
   password: string = '';
-  isLoggedIn: boolean = false;
+  loggedIn: boolean = false;
 
-  constructor(private authService: AuthenticationService) {}
+  constructor(
+    private router: Router,
+    private authService: AuthenticationService
+  ) {}
 
   login(): void {
     const success = this.authService.login(this.username, this.password);
 
     if (success) {
-      this.isLoggedIn = true;
-      console.log('Kirjautuminen onnistui');
+      this.loggedIn = true;
+      this.router.navigate(['/etusivu']);
     } else {
       console.log('Kirjautuminen epäonnistui');
     }
   }
   logout(): void {
     this.authService.logout();
-    this.isLoggedIn = false;
+    this.loggedIn = false;
   }
 }
