@@ -3,7 +3,6 @@ import {
   BrowserModule,
   provideClientHydration,
 } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -12,8 +11,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MapComponent } from './map/map.component';
 import { AdminComponent } from './admin/admin.component';
 import { WeatherComponent } from './weather/weather.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+// Remove this line
+// import { GeolocationModule } from '@ng-web-apis/geolocation';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,15 @@ import { HttpClientModule } from '@angular/common/http';
     AdminComponent,
     WeatherComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    // Remove this line
+    // GeolocationModule
+  ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })

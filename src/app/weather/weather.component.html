@@ -1,1 +1,34 @@
-<p>weather works!</p>
+<div class="content" [formGroup]="searchForm">
+  <input type="text" class="search-input" placeholder="Enter City" formControlName="city">
+  <button class="search-button" (click)="searchWeather()">Search</button>
+</div>
+
+<div class="content" *ngIf="weather">
+  <div class="row">
+    <div class="image-container">
+      <img class="imits" [src]="weather.icon" alt="Weather Icon">
+      <div class="temperature">
+        <p>Temperature: {{weather.temperature}}°C</p>
+      </div>
+      <div class="row">
+        <div class="section-2">
+          <div class="top-info">
+            <p>Expected temperature: {{weather.expected_temp}}</p>
+          </div>
+        </div>
+        <div class="bottom-info">
+          <div class="info-box">
+            <p>humidity: {{weather.humidity}}</p>
+          </div>
+          <div class="info-box">
+            <p>Windspeed: {{weather.wind}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="errorMessage" class="error-message">
+  <p>{{ errorMessage }}</p>
+</div>
