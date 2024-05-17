@@ -9,18 +9,34 @@
 
     <form *ngIf="!isLoggedIn" (ngSubmit)="login()" name="iform" method="post">
       <form id="loginput" name="iform" method="post">
-        <input type="text" id="username" name="username" [(ngModel)]="username" required autofocus class="input"
-          placeholder="Email address" />
+        <input
+          type="text"
+          id="username"
+          name="username"
+          [(ngModel)]="username"
+          required
+          autofocus
+          class="input"
+          placeholder="Email address"
+        />
       </form>
       <form id="loginput" name="iform" method="post">
-        <input type="password" id="password" name="password" [(ngModel)]="password" required autofocus />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+          autofocus
+        />
       </form>
-      <button type="submit">Log in as user</button>
+      <button type="submit"><a routerLink="/etusivu">Log in as user</a></button>
     </form>
     <button><a routerLink="/etusivu" target="_self">Guest mode</a></button>
     <div class="link">
-      <a class="smalltext" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Forgot password?</a>
+      <a class="smalltext" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        >Forgot password?</a
+      >
     </div>
   </div>
-
 </main>
